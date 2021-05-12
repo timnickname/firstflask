@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>postsandnames</title>
+</head>
+<body>
+	<form action='/' method='post'>
+		<input placeholder='name' name="name">
+		<input placeholder='content' name="post">
+		<input type="submit" value='Submit'>
+	</form>
+	<hr>
+	<form action='/delete/' method='post'>
+	<input type="submit" name="Submit" value='delete selected'>
+	{% for post in posts %}
+
+	<div><input type="checkbox" name='id' value='{{post[0]}}'>{{post[1] + ': '+ post[2]}}</div>
+	{% endfor %}
+
+	</form>
+</body>
+</html>
